@@ -22,8 +22,6 @@ class MyHomePage extends StatelessWidget {
         id: "T2", title: "New Shirt", amount: 16.99, date: DateTime.now()),
     Transaction(
         id: "T3", title: "New Pant", amount: 19.99, date: DateTime.now()),
-    Transaction(
-        id: "T4", title: "New Phone", amount: 19.99, date: DateTime.now()),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,19 +30,44 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter Apps'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                child: Text('Chart!'),
-              ) // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+          // Container(
+          //   width: double.infinity,
+          //   child: Card(
+          //     color: Colors.blue,
+          //     child: Text('Chart!'),
+          //   ), // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+          // ),
+          Card(
+            elevation: 5,
+            child: Container(
+              margin: EdgeInsets.all(5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                  ),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Add Transaction',
+                      style: TextStyle(color: Colors.purple),
+                    ),
+                  ),
+                ],
               ),
+            ),
+          ),
           Column(
             children: transactions.map((transaction) {
               return Card(
+                elevation: 5,
                 child: Row(
                   children: <Widget>[
                     Container(
@@ -57,8 +80,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                       padding: EdgeInsets.all(10),
-                      child: Text(
-                        '\$${transaction.amount}',
+                      child: Text('\$${transaction.amount}',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
