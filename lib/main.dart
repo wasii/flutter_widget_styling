@@ -56,7 +56,12 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                       padding: EdgeInsets.all(10),
-                      child: Text(transaction.amount.toString()),
+                      child: Text(transaction.amount.toString(),
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple,
+                          )),
                     ),
                     Column(
                       children: <Widget>[
