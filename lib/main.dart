@@ -15,10 +15,14 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final List<Transaction> transactions = [
-    Transaction(id: "T1", title: "New Shoes", amount: 69.99, date: DateTime.now()),
-    Transaction(id: "T2", title: "New Shirt", amount: 169.99, date: DateTime.now()),
-    Transaction(id: "T3", title: "New Pant", amount: 9.99, date: DateTime.now()),
-    Transaction(id: "T4", title: "New Phone", amount: 19.99, date: DateTime.now()),
+    Transaction(
+        id: "T1", title: "New Shoes", amount: 69.99, date: DateTime.now()),
+    Transaction(
+        id: "T2", title: "New Shirt", amount: 169.99, date: DateTime.now()),
+    Transaction(
+        id: "T3", title: "New Pant", amount: 9.99, date: DateTime.now()),
+    Transaction(
+        id: "T4", title: "New Phone", amount: 19.99, date: DateTime.now()),
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,17 +35,18 @@ class MyHomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('Chart!'),
-            )// padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-          ),
-          Container(
-            child: Card(
-              color: Colors.orange,
-              child: Text('List of TX!'),
-            ),
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('Chart!'),
+              ) // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+              ),
+          Column(
+            children: transactions.map((transaction) {
+              return Card(
+                child: Text(transaction.title),
+              );
+            }).toList(),
           ),
         ],
       ),
