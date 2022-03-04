@@ -9,9 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: 'Personal Expenses',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+      ),
     );
   }
 }
@@ -44,17 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _addNewTransactionPopUp(BuildContext ctx) {
-    showModalBottomSheet(context: ctx, builder: (_) {
-      return NewTransactions(_addNewTransaction);
-    });
+    showModalBottomSheet(
+        context: ctx,
+        builder: (_) {
+          return NewTransactions(_addNewTransaction);
+        });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Apps'),
-        backgroundColor: Colors.purple,
+        title: Text('Personal Expenses'),
         actions: [
           IconButton(
             icon: Icon(Icons.add),
@@ -79,7 +83,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        backgroundColor: Colors.purple,
         onPressed: () => _addNewTransactionPopUp(context),
       ),
     );
