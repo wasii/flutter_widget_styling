@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './widgets/new_transactions.dart';
-import './widgets/transaction_list.dart';
+import './widgets/user_transactions.dart';
 import 'models/transactions.dart';
 
 void main() => runApp(MyApp());
@@ -42,8 +41,7 @@ class MyHomePage extends StatelessWidget {
           //     child: Text('Chart!'),
           //   ), // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
           // ),
-          NewTransactions(),
-          TransactionList(),
+          UserTransactions(),
         ],
       ),
     );
