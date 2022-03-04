@@ -28,7 +28,7 @@ class NewTransactions extends StatelessWidget {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: titleController,
-              onChanged: (_) => submitData(),
+              onSubmitted: (_) => submitData(),
               // onChanged: (val) {
               //   titleInput = val;
               // },
@@ -37,7 +37,7 @@ class NewTransactions extends StatelessWidget {
               decoration: InputDecoration(labelText: 'Amount'),
               controller: amountController,
               keyboardType: TextInputType.number,
-              onChanged: (_) => submitData(),
+              onSubmitted: (_) => submitData(),
               // onChanged: (val) {
               //   amountInput = val;
               // },
