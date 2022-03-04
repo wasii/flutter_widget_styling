@@ -15,8 +15,6 @@ class _UserTransactionsState extends State<UserTransactions> {
         id: "T1", title: "New Shoes", amount: 69.99, date: DateTime.now()),
     Transaction(
         id: "T2", title: "New Shirt", amount: 16.99, date: DateTime.now()),
-    Transaction(
-        id: "T3", title: "New Pant", amount: 19.99, date: DateTime.now()),
   ];
 
   //making a function to add new transaction.
@@ -37,7 +35,7 @@ class _UserTransactionsState extends State<UserTransactions> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NewTransactions(add),
+        NewTransactions(_addNewTransaction),
         TransactionList(_userTransaction),
       ],
     );

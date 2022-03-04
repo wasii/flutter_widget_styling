@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter App',
       home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -29,20 +30,23 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Apps'),
+        backgroundColor: Colors.purple,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Container(
-          //   width: double.infinity,
-          //   child: Card(
-          //     color: Colors.blue,
-          //     child: Text('Chart!'),
-          //   ), // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
-          // ),
-          UserTransactions(),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Container(
+            //   width: double.infinity,
+            //   child: Card(
+            //     color: Colors.blue,
+            //     child: Text('Chart!'),
+            //   ), // padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
+            // ),
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
